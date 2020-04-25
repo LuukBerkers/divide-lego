@@ -1,0 +1,395 @@
+{
+  "count": 65,
+  "results": [
+    {
+      "id": 1,
+      "name": "Baseplates",
+      "super": "Baseplates",
+      "standard": true
+    },
+    {
+      "id": 3,
+      "name": "Bricks Sloped",
+      "super": "Bricks",
+      "standard": false
+    },
+    {
+      "id": 4,
+      "name": "Duplo, Quatro and Primo",
+      "super": "Duplo, Quatro and Primo",
+      "standard": true
+    },
+    {
+      "id": 5,
+      "name": "Bricks Special",
+      "super": "Bricks",
+      "standard": false
+    },
+    {
+      "id": 6,
+      "name": "Bricks Wedged",
+      "super": "Bricks",
+      "standard": false
+    },
+    {
+      "id": 7,
+      "name": "Containers",
+      "super": "Containers",
+      "standard": true
+    },
+    {
+      "id": 8,
+      "name": "Technic Bricks",
+      "super": "Technic",
+      "standard": false
+    },
+    {
+      "id": 9,
+      "name": "Plates Special",
+      "super": "Plates",
+      "standard": false
+    },
+    {
+      "id": 11,
+      "name": "Bricks",
+      "super": "Bricks",
+      "standard": true
+    },
+    {
+      "id": 12,
+      "name": "Technic Connectors",
+      "super": "Technic",
+      "standard": false
+    },
+    {
+      "id": 13,
+      "name": "Minifigs",
+      "super": "Minifgs",
+      "standard": true
+    },
+    {
+      "id": 14,
+      "name": "Plates",
+      "super": "Plates",
+      "standard": true
+    },
+    {
+      "id": 15,
+      "name": "Tiles Special",
+      "super": "Tiles",
+      "standard": false
+    },
+    {
+      "id": 16,
+      "name": "Windows and Doors",
+      "super": "Windows and Doors",
+      "standard": true
+    },
+    {
+      "id": 17,
+      "name": "Non-LEGO",
+      "super": "Non-LEGO",
+      "standard": true
+    },
+    {
+      "id": 18,
+      "name": "Hinges, Arms and Turntables",
+      "super": "Hinges, Arms and Turntables",
+      "standard": true
+    },
+    {
+      "id": 19,
+      "name": "Tiles",
+      "super": "Tiles",
+      "standard": true
+    },
+    {
+      "id": 20,
+      "name": "Bricks Round and Cones",
+      "super": "Bricks",
+      "standard": false
+    },
+    {
+      "id": 21,
+      "name": "Plates Round and Dishes",
+      "super": "Plates",
+      "standard": false
+    },
+    {
+      "id": 22,
+      "name": "Pneumatics",
+      "super": "Pneumatics",
+      "standard": true
+    },
+    {
+      "id": 23,
+      "name": "Panels",
+      "super": "Panels",
+      "standard": true
+    },
+    {
+      "id": 24,
+      "name": "Other",
+      "super": "Other",
+      "standard": true
+    },
+    {
+      "id": 25,
+      "name": "Technic Steering, Suspension and Engine",
+      "super": "Technic",
+      "standard": false
+    },
+    {
+      "id": 26,
+      "name": "Technic Special",
+      "super": "Technic",
+      "standard": false
+    },
+    {
+      "id": 27,
+      "name": "Minifig Accessories",
+      "super": "Figures",
+      "standard": false
+    },
+    {
+      "id": 28,
+      "name": "Plants and Animals",
+      "super": "Plants and Animals",
+      "standard": true
+    },
+    {
+      "id": 29,
+      "name": "Wheels and Tyres",
+      "super": "Wheels and Tyres",
+      "standard": true
+    },
+    {
+      "id": 30,
+      "name": "Tubes and Hoses",
+      "super": "Tubes and Hoses",
+      "standard": true
+    },
+    {
+      "id": 31,
+      "name": "String, Bands and Reels",
+      "super": "String, Bands and Reels",
+      "standard": true
+    },
+    {
+      "id": 32,
+      "name": "Bars, Ladders and Fences",
+      "super": "Bars, Ladders and Fences",
+      "standard": true
+    },
+    {
+      "id": 33,
+      "name": "Rock",
+      "super": "Rock",
+      "standard": true
+    },
+    {
+      "id": 34,
+      "name": "Supports, Girders and Cranes",
+      "super": "Supports, Girders and Cranes",
+      "standard": true
+    },
+    {
+      "id": 35,
+      "name": "Transportation - Sea and Air",
+      "super": "Transportation",
+      "standard": false
+    },
+    {
+      "id": 36,
+      "name": "Transportation - Land",
+      "super": "Transportation",
+      "standard": false
+    },
+    {
+      "id": 37,
+      "name": "Bricks Curved",
+      "super": "Bricks",
+      "standard": false
+    },
+    {
+      "id": 38,
+      "name": "Flags, Signs, Plastics and Cloth",
+      "super": "Flags, Signs, Plastics and Cloth",
+      "standard": true
+    },
+    {
+      "id": 39,
+      "name": "Magnets and Holders",
+      "super": "Magnets and Holders",
+      "standard": true
+    },
+    {
+      "id": 40,
+      "name": "Technic Panels",
+      "super": "Technic",
+      "standard": false
+    },
+    {
+      "id": 41,
+      "name": "Bionicle, Hero Factory and Constraction",
+      "super": "Bionicle, Hero Factory and Constraction",
+      "standard": true
+    },
+    {
+      "id": 42,
+      "name": "Belville, Scala and Fabuland",
+      "super": "Belville, Scala and Fabuland",
+      "standard": true
+    },
+    {
+      "id": 43,
+      "name": "Znap",
+      "super": "Znap",
+      "standard": true
+    },
+    {
+      "id": 44,
+      "name": "Mechanical",
+      "super": "Mechanical",
+      "standard": true
+    },
+    {
+      "id": 45,
+      "name": "Power Functions, Mindstorms and Electric",
+      "super": "Power Functions, Mindstorms and Electric",
+      "standard": true
+    },
+    {
+      "id": 46,
+      "name": "Technic Axles",
+      "super": "Technic",
+      "standard": false
+    },
+    {
+      "id": 47,
+      "name": "Windscreens and Fuselage",
+      "super": "Windscreens and Fuselage",
+      "standard": true
+    },
+    {
+      "id": 48,
+      "name": "Clikits",
+      "super": "Clikits",
+      "standard": true
+    },
+    {
+      "id": 49,
+      "name": "Plates Angled",
+      "super": "Plates",
+      "standard": false
+    },
+    {
+      "id": 50,
+      "name": "HO Scale",
+      "super": "HO Scale",
+      "standard": true
+    },
+    {
+      "id": 51,
+      "name": "Technic Beams",
+      "super": "Technic",
+      "standard": false
+    },
+    {
+      "id": 52,
+      "name": "Technic Gears",
+      "super": "Technic",
+      "standard": false
+    },
+    {
+      "id": 53,
+      "name": "Technic Pins",
+      "super": "Technic",
+      "standard": false
+    },
+    {
+      "id": 54,
+      "name": "Technic Bushes",
+      "super": "Technic",
+      "standard": false
+    },
+    {
+      "id": 55,
+      "name": "Technic Beams Special",
+      "super": "Technic",
+      "standard": false
+    },
+    {
+      "id": 56,
+      "name": "Tools",
+      "super": "Tools",
+      "standard": true
+    },
+    {
+      "id": 57,
+      "name": "Non-Buildable Figures (Duplo, Fabuland, etc)",
+      "super": "Figures",
+      "standard": false
+    },
+    {
+      "id": 58,
+      "name": "Stickers",
+      "super": "Stickers",
+      "standard": true
+    },
+    {
+      "id": 59,
+      "name": "Minifig Heads",
+      "super": "Figures",
+      "standard": false
+    },
+    {
+      "id": 60,
+      "name": "Minifig Upper Body",
+      "super": "Figures",
+      "standard": false
+    },
+    {
+      "id": 61,
+      "name": "Minifig Lower Body",
+      "super": "Figures",
+      "standard": false
+    },
+    {
+      "id": 62,
+      "name": "Minidoll Heads",
+      "super": "Figures",
+      "standard": false
+    },
+    {
+      "id": 63,
+      "name": "Minidoll Upper Body",
+      "super": "Figures",
+      "standard": false
+    },
+    {
+      "id": 64,
+      "name": "Minidoll Lower Body",
+      "super": "Figures",
+      "standard": false
+    },
+    {
+      "id": 65,
+      "name": "Minifig Headwear",
+      "super": "Figures",
+      "standard": false
+    },
+    {
+      "id": 66,
+      "name": "Modulex",
+      "super": "Modulex",
+      "standard": true
+    },
+    {
+      "id": 67,
+      "name": "Tiles Round and Curved",
+      "super": "Tiles",
+      "standard": false
+    }
+  ]
+}
