@@ -1,0 +1,14 @@
+// These API keys are fake.
+// You should replace these fake keys with your own API keys
+// Then save this file as 'keys.json'
+// Also remove these comments
+
+{
+  "rebrickable": "3117115ac4910404b7874e0ac0f697e4",
+  "bricklink": {
+    "consumer_key": "D176EEAD5A1FF9473B550972BA297996",
+    "consumer_secret": "ECBA4AFC300C3B0C5C27626FE1841EF4",
+    "token_value": "992364FC6758B802D67363761EE0D71D",
+    "token_secret": "56CE90226EE69A4FB39785B253B5F7A8"
+  }
+}
