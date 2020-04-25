@@ -18,8 +18,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+
 import argparse
 import colorama
+from datetime import datetime
 import json
 import requests
 from requests_oauthlib import OAuth1
@@ -40,8 +42,8 @@ with open("keys.json", "r") as key_file:
 
 
 def log(s=str(), *, only_console=False, always_console=False):
-    console_mode = True
-    if console_mode or always_console:
+    global CONSOLE_MODE
+    if CONSOLE_MODE or always_console:
         print(s)
     elif not only_console:
         with open("logs", "a") as log_file:
@@ -218,7 +220,7 @@ def use_grand_total(parts, id):
 def divide_parts(parts, divisions, category_list):
     # grand_total = sum([p.quantity for p in parts if not p.used])
     grand_total = sum([p.total_weight for p in parts if not p.used])
-    groupings = dict()
+    groupings = list()
     log(
         "\nTotal weight: "
         + colorama.Fore.YELLOW
@@ -389,13 +391,8 @@ def divide_parts(parts, divisions, category_list):
         }
         best_key = list(bests.keys())[0]
         parts_used = use_functions[best_key](parts, bests[best_key]["id"])
-        groupings[
-            colorama.Fore.BLUE
-            + best_key
-            + ": "
-            + colorama.Fore.LIGHTBLUE_EX
-            + bests[best_key]["name"]
-        ] = parts_used
+        groupings.append((best_key, bests[best_key]["name"], parts_used))
+        # groupings[best_key + ": " + bests[best_key]["name"]] = parts_used
 
         grand_total = sum([p.total_weight for p in parts if not p.used])
 
@@ -419,6 +416,16 @@ def main():
     )
     parser.add_argument("-j", "--json", action="store_true", help="output in JSON")
     args = parser.parse_args()
+
+    global CONSOLE_MODE
+    CONSOLE_MODE = not args.json
+
+    if not CONSOLE_MODE:
+        log(
+            datetime.now().astimezone().replace(microsecond=0).isoformat()
+            + "  "
+            + args.set_num
+        )
 
     log(
         "divide.py  Copyright (C) 2020  "
@@ -472,11 +479,30 @@ def main():
         only_console=True,
     )
 
-    for group, amount in groupings.items():
-        log(
-            group + ": " + colorama.Fore.YELLOW + "{:.2f}".format(amount),
-            only_console=True,
-        )
+    if CONSOLE_MODE:
+        for cat_type, group, amount in groupings:
+            log(
+                colorama.Fore.BLUE
+                + cat_type
+                + ": "
+                + colorama.Fore.LIGHTBLUE_EX
+                + group
+                + ": "
+                + colorama.Fore.YELLOW
+                + "{:.2f}".format(amount),
+                only_console=True,
+            )
+    else:
+        json_out = {
+            "num": set_data["set_num"],
+            "name": set_data["name"],
+            "groupings": list(),
+        }
+
+        for group in groupings:
+            json_out["groupings"].append(group)
+
+        log(json.dumps(json_out, indent=2), always_console=True)
 
 
 if __name__ == "__main__":
