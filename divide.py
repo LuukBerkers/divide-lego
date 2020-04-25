@@ -18,41 +18,15 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+import argparse
 import colorama
 import json
 import requests
 from requests_oauthlib import OAuth1
-import sys
 import urllib.request
 
-if len(sys.argv) != 3:
-    print("Usage: divide <set_number> <divisions>")
-    sys.exit(1)
-else:
-    pass
-
-
-def log(s=str(), *, only_console=False, always_console=False):
-    console_mode = True
-    if console_mode or always_console:
-        print(s)
-    elif not only_console:
-        with open("logs", "a") as log_file:
-            log_file.write(s + "\n")
-
-
-log(
-    "divide.py  Copyright (C) 2020  Luuk Berkers <berkers.luuk@gmail.com>\n\n"
-    "This program comes with ABSOLUTELY NO WARRANTY.\n"
-    "This is free software, and you are welcome to redistribute it\n"
-    "under certain conditions. See LICENSE for details.\n",
-    only_console=True,
-)
 
 colorama.init(autoreset=True)
-
-SET_NUM = sys.argv[1]
-DIVISIONS = int(sys.argv[2])
 
 BL_CACHE = "bricklink_weight_cache.json"
 CAT_FILE = "rebrickable_part_categories.json"
@@ -63,6 +37,15 @@ BL_API = "https://api.bricklink.com/api/store/v1/"
 
 with open("keys.json", "r") as key_file:
     KEYS = json.loads(key_file.read())
+
+
+def log(s=str(), *, only_console=False, always_console=False):
+    console_mode = True
+    if console_mode or always_console:
+        print(s)
+    elif not only_console:
+        with open("logs", "a") as log_file:
+            log_file.write(s + "\n")
 
 
 def find_index(list, key, val):
@@ -232,7 +215,7 @@ def use_grand_total(parts, id):
     return count
 
 
-def divide_parts(parts, category_list):
+def divide_parts(parts, divisions, category_list):
     # grand_total = sum([p.quantity for p in parts if not p.used])
     grand_total = sum([p.total_weight for p in parts if not p.used])
     groupings = dict()
@@ -246,7 +229,7 @@ def divide_parts(parts, category_list):
     )
 
     # ppd = grand_total // DIVISIONS
-    wpd = grand_total / DIVISIONS
+    wpd = grand_total / divisions
 
     log(
         "About "
@@ -420,13 +403,39 @@ def divide_parts(parts, category_list):
 
 
 def main():
-    url = REBRICKABLE_API + "sets/" + SET_NUM + "/?key=" + KEYS["rebrickable"]
+    parser = argparse.ArgumentParser(
+        description="suggest ways to divide the parts "
+        "of your Lego set into categories"
+    )
+    parser.add_argument(
+        "set_num",
+        help="the set number in the Rebrickable database; "
+        "this is usually the Lego set number followed by '-1'",
+    )
+    parser.add_argument(
+        "groupings",
+        type=int,
+        help="the number of category groups that the program should attempt to make",
+    )
+    parser.add_argument("-j", "--json", action="store_true", help="output in JSON")
+    args = parser.parse_args()
+
+    log(
+        "divide.py  Copyright (C) 2020  "
+        "Luuk Berkers <berkers.luuk@gmail.com>\n\n"
+        "This program comes with ABSOLUTELY NO WARRANTY.\n"
+        "This is free software, and you are welcome to redistribute it\n"
+        "under certain conditions. See LICENSE for details.\n",
+        only_console=True,
+    )
+
+    url = REBRICKABLE_API + "sets/" + args.set_num + "/?key=" + KEYS["rebrickable"]
     log("Requesting: " + url)
     raw_set_data = urllib.request.urlopen(url).read().decode()
     set_data = json.loads(raw_set_data)
 
     next_url = (
-        REBRICKABLE_API + "sets/" + SET_NUM + "/parts/?key=" + KEYS["rebrickable"]
+        REBRICKABLE_API + "sets/" + args.set_num + "/parts/?key=" + KEYS["rebrickable"]
     )
     parts = list()
 
@@ -452,7 +461,7 @@ def main():
     parts.sort(key=lambda p: p.total_weight)
     with open(CAT_FILE, "r") as category_file:
         categories = json.loads(category_file.read())
-    groupings = divide_parts(parts, categories["results"])
+    groupings = divide_parts(parts, args.groupings, categories["results"])
 
     log(
         "\n"
