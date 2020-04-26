@@ -31,14 +31,14 @@ import sys
 
 colorama.init(autoreset=True)
 
-BL_CACHE = "bricklink_weight_cache.json"
-CAT_FILE = "rebrickable_part_categories.json"
+BL_CACHE = path.join(sys.path[0], "bricklink_weight_cache.json")
+CAT_FILE = path.join(sys.path[0], "rebrickable_part_categories.json")
 MAX_CAT_NUM = 67 + 1  # + 1 because this is used as List length
 
 REBRICKABLE_API = "https://rebrickable.com/api/v3/lego/"
 BL_API = "https://api.bricklink.com/api/store/v1/"
 
-with open("keys.json", "r") as key_file:
+with open(path.join(sys.path[0], "keys.json"), "r") as key_file:
     KEYS = json.loads(key_file.read())
 
 
@@ -47,7 +47,7 @@ def log(s=str(), *, only_console=False, always_console=False):
     if CONSOLE_MODE or always_console:
         print(s)
     elif not only_console:
-        with open("logs", "a") as log_file:
+        with open(path.join(sys.path[0], "logs"), "a") as log_file:
             log_file.write(s + "\n")
 
 
@@ -517,11 +517,12 @@ def main():
             json_out["groupings"].append(group)
 
         log(json.dumps(json_out, indent=2), always_console=True)
-        
+
     return 0
 
 
 if __name__ == "__main__":
     status = main()
-    if not CONSOLE_MODE or status == 0: log()
+    if not CONSOLE_MODE or status == 0:
+        log()
     sys.exit(status)
