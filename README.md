@@ -1,1 +1,1 @@
-# divide-lego-parts
+# divide-lego
