@@ -25,7 +25,6 @@ from datetime import datetime
 import json
 import requests
 from requests_oauthlib import OAuth1
-import urllib.request
 
 
 colorama.init(autoreset=True)
@@ -438,8 +437,7 @@ def main():
 
     url = REBRICKABLE_API + "sets/" + args.set_num + "/?key=" + KEYS["rebrickable"]
     log("Requesting: " + url)
-    raw_set_data = urllib.request.urlopen(url).read().decode()
-    set_data = json.loads(raw_set_data)
+    set_data = requests.get(url).json()
 
     next_url = (
         REBRICKABLE_API + "sets/" + args.set_num + "/parts/?key=" + KEYS["rebrickable"]
@@ -448,8 +446,7 @@ def main():
 
     while not next_url == None:
         log("Requesting: " + next_url)
-        raw_data = urllib.request.urlopen(next_url).read().decode()
-        data = json.loads(raw_data)
+        data = requests.get(next_url).json()
         parts = process_data(data, parts)
         next_url = data["next"]
 
