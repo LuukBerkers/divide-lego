@@ -23,8 +23,10 @@ import argparse
 import colorama
 from datetime import datetime
 import json
+from os import path
 import requests
 from requests_oauthlib import OAuth1
+import sys
 
 
 colorama.init(autoreset=True)
@@ -437,7 +439,22 @@ def main():
 
     url = REBRICKABLE_API + "sets/" + args.set_num + "/?key=" + KEYS["rebrickable"]
     log("Requesting: " + url)
-    set_data = requests.get(url).json()
+    response = requests.get(url)
+
+    # TODO Do this using error handling
+    if response.status_code == 404 and CONSOLE_MODE:
+        log(
+            path.basename(sys.argv[0])
+            + ": error: set does not appear in the Rebrickable database: "
+            + args.set_num,
+            only_console=True,
+        )
+        return 1
+    elif response.status_code != 200:
+        log(json.dumps({"error": response.status_code}, indent=2), always_console=True)
+        return 1
+
+    set_data = response.json()
 
     next_url = (
         REBRICKABLE_API + "sets/" + args.set_num + "/parts/?key=" + KEYS["rebrickable"]
@@ -500,8 +517,11 @@ def main():
             json_out["groupings"].append(group)
 
         log(json.dumps(json_out, indent=2), always_console=True)
+        
+    return 0
 
 
 if __name__ == "__main__":
-    main()
-    log()
+    status = main()
+    if not CONSOLE_MODE or status == 0: log()
+    sys.exit(status)
