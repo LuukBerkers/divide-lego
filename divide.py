@@ -442,16 +442,13 @@ def main():
     response = requests.get(url)
 
     # TODO Do this using error handling
-    if response.status_code == 404 and CONSOLE_MODE:
+    if response.status_code == 404:
         log(
             path.basename(sys.argv[0])
             + ": error: set does not appear in the Rebrickable database: "
             + args.set_num,
             only_console=True,
         )
-        return 1
-    elif response.status_code != 200:
-        log(json.dumps({"error": response.status_code}, indent=2), always_console=True)
         return 1
 
     set_data = response.json()
