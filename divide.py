@@ -447,7 +447,7 @@ def main():
             path.basename(sys.argv[0])
             + ": error: set does not appear in the Rebrickable database: "
             + args.set_num,
-            only_console=True,
+            always_console=True,
         )
         return 1
 
