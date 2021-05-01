@@ -5,7 +5,7 @@
       "id": 1,
       "name": "Baseplates",
       "super": "Plates",
-      "standard": true
+      "standard": false
     },
     {
       "id": 3,
@@ -17,7 +17,7 @@
       "id": 4,
       "name": "Duplo, Quatro and Primo",
       "super": "Niche LEGO themes",
-      "standard": true
+      "standard": false
     },
     {
       "id": 5,
@@ -35,7 +35,7 @@
       "id": 7,
       "name": "Containers",
       "super": "Everything Else",
-      "standard": true
+      "standard": false
     },
     {
       "id": 8,
@@ -83,7 +83,7 @@
       "id": 16,
       "name": "Windows and Doors",
       "super": "Everything Else",
-      "standard": true
+      "standard": false
     },
     {
       "id": 17,
@@ -95,7 +95,7 @@
       "id": 18,
       "name": "Hinges, Arms and Turntables",
       "super": "Everything Else",
-      "standard": true
+      "standard": false
     },
     {
       "id": 19,
@@ -119,19 +119,19 @@
       "id": 22,
       "name": "Pneumatics",
       "super": "Technic",
-      "standard": true
+      "standard": false
     },
     {
       "id": 23,
       "name": "Panels",
       "super": "Everything Else",
-      "standard": true
+      "standard": false
     },
     {
       "id": 24,
       "name": "Other",
       "super": "Non-construction",
-      "standard": true
+      "standard": false
     },
     {
       "id": 25,
@@ -154,44 +154,44 @@
     {
       "id": 28,
       "name": "Plants and Animals",
-      "super": "Plants and Animals",
-      "standard": true
+      "super": "Everything Else",
+      "standard": false
     },
     {
       "id": 29,
       "name": "Wheels and Tyres",
       "super": "Transportation",
-      "standard": true
+      "standard": false
     },
     {
       "id": 30,
       "name": "Tubes and Hoses",
       "super": "Everything Else",
-      "standard": true
+      "standard": false
     },
     {
       "id": 31,
       "name": "String, Bands and Reels",
       "super": "Everything Else",
-      "standard": true
+      "standard": false
     },
     {
       "id": 32,
       "name": "Bars, Ladders and Fences",
       "super": "Everything Else",
-      "standard": true
+      "standard": false
     },
     {
       "id": 33,
       "name": "Rock",
       "super": "Everything Else",
-      "standard": true
+      "standard": false
     },
     {
       "id": 34,
       "name": "Supports, Girders and Cranes",
       "super": "Everything Else",
-      "standard": true
+      "standard": false
     },
     {
       "id": 35,
@@ -215,13 +215,13 @@
       "id": 38,
       "name": "Flags, Signs, Plastics and Cloth",
       "super": "Everything Else",
-      "standard": true
+      "standard": false
     },
     {
       "id": 39,
       "name": "Magnets and Holders",
       "super": "Everything Else",
-      "standard": true
+      "standard": false
     },
     {
       "id": 40,
@@ -233,31 +233,31 @@
       "id": 41,
       "name": "Bionicle, Hero Factory and Constraction",
       "super": "Niche LEGO themes",
-      "standard": true
+      "standard": false
     },
     {
       "id": 42,
       "name": "Belville, Scala and Fabuland",
       "super": "Niche LEGO themes",
-      "standard": true
+      "standard": false
     },
     {
       "id": 43,
       "name": "Znap",
       "super": "Niche LEGO themes",
-      "standard": true
+      "standard": false
     },
     {
       "id": 44,
       "name": "Mechanical",
       "super": "Everything Else",
-      "standard": true
+      "standard": false
     },
     {
       "id": 45,
       "name": "Power Functions, Mindstorms and Electric",
       "super": "Technic",
-      "standard": true
+      "standard": false
     },
     {
       "id": 46,
@@ -269,13 +269,13 @@
       "id": 47,
       "name": "Windscreens and Fuselage",
       "super": "Transportation",
-      "standard": true
+      "standard": false
     },
     {
       "id": 48,
       "name": "Clikits",
       "super": "Niche LEGO themes",
-      "standard": true
+      "standard": false
     },
     {
       "id": 49,
@@ -287,7 +287,7 @@
       "id": 50,
       "name": "HO Scale",
       "super": "Niche LEGO themes",
-      "standard": true
+      "standard": false
     },
     {
       "id": 51,
@@ -323,7 +323,7 @@
       "id": 56,
       "name": "Tools",
       "super": "Non-construction",
-      "standard": true
+      "standard": false
     },
     {
       "id": 57,
@@ -335,7 +335,7 @@
       "id": 58,
       "name": "Stickers",
       "super": "Non-construction",
-      "standard": true
+      "standard": false
     },
     {
       "id": 59,
@@ -383,7 +383,7 @@
       "id": 66,
       "name": "Modulex",
       "super": "Niche LEGO themes",
-      "standard": true
+      "standard": false
     },
     {
       "id": 67,
